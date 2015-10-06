@@ -8,12 +8,30 @@
 </head>
 <body>
 <nav class="navbar navbar-default navbar-fixed-top">
-
-    <div class="container-fluid">
+  <div class="container-fluid">
       <a class="navbar-brand" href="#"> Treebook </a>
       <ul class="nav navbar-nav">
         <li> <%= link_to "All Statuses", statuses_path %> </li>
-    </div>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <% if user_signed_in? %>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+            <%= current_user.full_name %><span class="caret"></span></a>
+            <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li role="separator" class="divider"></li>
+            <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+          </ul>
+        </li>
+        <% else %>
+        <li><%= link_to "Sign up", new_user_registration_path%></li> |
+        <li><%= link_to "Login", new_user_session_path%></li>
+        <% end %>
+      </ul>
+  </div>
 
 </nav>
 

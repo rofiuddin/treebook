@@ -6,6 +6,9 @@ gem 'rails', '4.0.0'
 # Use devise for creating signup and signin system
 gem 'devise'
 
+#For creating a simple_form layout https://github.com/plataformatec/simple_form
+gem 'simple_form'
+
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 
