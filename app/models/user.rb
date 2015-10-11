@@ -3,6 +3,14 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+  validates :first_name, presence: true #part of activeRecord validation
+  validates :last_name, presence: true #part of activeRecord validation
+  validates :profile_name, presence: true,#part of activeRecord validation
+                           uniqueness: true,
+                           format: {
+                             with: /a-zA-Z0-9_-/,
+                             message: 'Must be formatted'
+                           }
 
   has_many :statuses
   def full_name
