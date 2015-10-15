@@ -12,7 +12,7 @@
   <div class="container-fluid">
       <a class="navbar-brand" href="#"> Treebook </a>
       <ul class="nav navbar-nav">
-        <li> <%= link_to "All Statuses", statuses_path %> </li>
+        <li> <%= link_to "All Statuses", feed_path %> </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
@@ -24,12 +24,12 @@
             <li><a href="#">Another action</a></li>
             <li><a href="#">Something else here</a></li>
             <li role="separator" class="divider"></li>
-            <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+            <li><%= link_to "Logout", logout_path %></li>
           </ul>
         </li>
         <% else %>
-        <li><%= link_to "Sign up", new_user_registration_path%></li>
-        <li><%= link_to "Login", new_user_session_path%></li>
+        <li><%= link_to "Sign up", registration_path%></li>
+        <li><%= link_to "Login", login_path%></li>
         <% end %>
       </ul>
   </div>
@@ -38,7 +38,7 @@
 
 <div class="container-fluid">
   <% flash.each do |type, message| %>
-  <div class="alert alert-success <%= flash_class type %>" role="alert">
+  <div class="alert <%= flash_class type %>" role="alert">
   <%= message %>
   </div>
   <% end %>
