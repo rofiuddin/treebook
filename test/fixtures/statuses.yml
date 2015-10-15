@@ -3,7 +3,9 @@
 one:
   #name: MyString
   content: MyText
+  user: rofi
 
 two:
   #name: MyString
   content: MyText
+  user: rofi
