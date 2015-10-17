@@ -9,10 +9,9 @@
 #
 #two: {}
 #  column: value
-#writing a fixture for a user for availability of data
+#writing a fixture for a user for availability of data for testing purposes
 rofi:
   first_name: "Rofi"
   last_name: "Uddin"
   profile_name: "Yeager"
   email: "md.rofi.uddin@framgia.com"
-  

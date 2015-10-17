@@ -1,7 +1,7 @@
 class StatusesController < ApplicationController
  before_action :set_status, only: [:show, :edit, :update, :destroy]
 #   https://github.com/plataformatec/devise#controller-filters-and-helpers ,only for new posts
-before_action :authenticate_user!, only: [:new]
+before_action :authenticate_user!, only: [:new, :create, :edit, :update]
   # GET /statuses
   # GET /statuses.json
   def index

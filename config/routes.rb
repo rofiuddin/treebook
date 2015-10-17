@@ -5,6 +5,8 @@ Treebook::Application.routes.draw do
   get "sign_up", to: "devise/registrations#new", as: :registration
   get "sign_in", to: "devise/sessions#new", as: :login
   get "sign_out", to: "devise/sessions#destroy", as: :logout
+  #post "/sign_up.user", to: "devise/registrations#create"
+  match '/sign_up.user', to: 'devise/registrations#create', via: :post
   end
 
   resources :statuses

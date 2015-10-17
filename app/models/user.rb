@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
   validates :profile_name, presence: true,#part of activeRecord validation
                            uniqueness: true,
                            format: {
-                             with: /a-zA-Z0-9_-/,
+                             with: /[a-zA-Z0-9]/,
                              message: 'Must be formatted'
                            }
 
