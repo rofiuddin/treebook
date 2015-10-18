@@ -3,18 +3,23 @@ Treebook::Application.routes.draw do
   devise_for :users
 
   devise_scope :user do
-  get "sign_up", to: "devise/registrations#new", as: :registration
-  get "sign_in", to: "devise/sessions#new", as: :login
-  get "sign_out", to: "devise/sessions#destroy", as: :logout
+  get 'sign_up', to: 'devise/registrations#new', as: :registration
+  get 'sign_in', to: 'devise/sessions#new', as: :login
+  get 'sign_out', to: 'devise/sessions#destroy', as: :logout
   #post "/sign_up.user", to: "devise/registrations#create"
   match '/sign_up.user', to: 'devise/registrations#create', via: :post
   end
 
   resources :statuses
-  get "feed", to: "statuses#index", as: :feed
-
+  get 'feed', to: 'statuses#index', as: :feed
 
   root to: 'statuses#index'
+
+  # remember we used params hash and passed in id key mapped to user object
+  get '/:id', to: 'profiles#show'
+  #resources :profiles (whole another bunch of voo-doos)
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

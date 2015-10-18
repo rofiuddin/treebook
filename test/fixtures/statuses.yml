@@ -9,3 +9,8 @@ two:
   #name: MyString
   content: MyText
   user: rofi
+
+three:
+  #name: MyString
+  content: "Hello,I'm martian"
+  user: matt

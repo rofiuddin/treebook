@@ -9,9 +9,15 @@
 #
 #two: {}
 #  column: value
-#writing a fixture for a user for availability of data for testing purposes
+#In order to write some tests, we need to make sure certain data is available to us without logging in. fixtures takes care of that
 rofi:
   first_name: "Rofi"
   last_name: "Uddin"
   profile_name: "Yeager"
   email: "md.rofi.uddin@framgia.com"
+
+matt:
+  first_name: "Matt"
+  last_name: "Damon"
+  profile_name: "themartian"
+  email: "themartian@framgia.com"

@@ -25,8 +25,8 @@ before_action :authenticate_user!, only: [:new, :create, :edit, :update]
   # POST /statuses
   # POST /statuses.json
   def create
-    @status = Status.new(status_params)
-
+    @status = Status.new(status_params) #bugsy
+    #@status = current_user.statuses.new(status_params) correct one 
     respond_to do |format|
       if @status.save
         format.html { redirect_to @status, notice: 'Status was successfully created.' }
