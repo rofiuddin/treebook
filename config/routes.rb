@@ -1,14 +1,15 @@
 Treebook::Application.routes.draw do
   get "profiles/show"
-  devise_for :users
 
   devise_scope :user do
   get 'sign_up', to: 'devise/registrations#new', as: :registration
   get 'sign_in', to: 'devise/sessions#new', as: :login
   get 'sign_out', to: 'devise/sessions#destroy', as: :logout
   #post "/sign_up.user", to: "devise/registrations#create"
-  match '/sign_up.user', to: 'devise/registrations#create', via: :post
+  #match '/sign_up.user', to: 'devise/registrations#create', via: :post
   end
+
+  devise_for :users
 
   resources :statuses
   get 'feed', to: 'statuses#index', as: :feed
